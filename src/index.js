@@ -6,6 +6,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,6 +18,7 @@ root.render(
         <Route path="*" element={<ErrorPage />} />
         <Route path="/" element={<Homepage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
