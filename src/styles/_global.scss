@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap");
+
 *,
 body {
   margin: 0;
@@ -5,3 +7,22 @@ body {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3 {
+  color: $darkBlue;
+}
+
+.margin-x {
+  width: 75%;
+  margin: auto;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: $bodyBackground;
+}
+
+.footer {
+  font-family: "Josefin Sans", sans-serif;
+}

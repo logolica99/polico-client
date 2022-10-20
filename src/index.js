@@ -4,20 +4,19 @@ import "./styles/style.scss";
 import Homepage from "./pages/Homepage";
 import ErrorPage from "./pages/ErrorPage";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Nav from "./components/Nav";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Homepage />,
-    errorElement: <ErrorPage />,
-  },
-
-]);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

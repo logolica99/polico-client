@@ -1,0 +1,147 @@
+.nav {
+  background-color: $lightBlue;
+
+  &-wrapper {
+    padding: 16px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-logo {
+      flex: 1;
+      > img {
+      }
+    }
+    &-search {
+      flex: 4;
+      display: flex;
+      > input {
+        width: 100%;
+        outline: none;
+        border: none;
+        padding-left: 20px;
+        font-size: 16px;
+        font-family: "Montserrat";
+      }
+
+      &-button {
+        cursor: pointer;
+        background-color: $darkBlue;
+        padding: 4px 30px;
+        > img {
+          transition: all 250ms ease-in-out;
+        }
+      }
+      &-button:hover {
+        > img {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &-cart {
+      flex: 0.5;
+      display: flex;
+      justify-content: center;
+      > a {
+        text-decoration: none;
+        color: $darkBlue;
+        position: relative;
+        > img {
+          cursor: pointer;
+        }
+
+        .item-count {
+          background-color: #d9d9d9;
+          height: 20px;
+          position: absolute;
+          left: 20px;
+          top: -7px;
+          width: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          border-radius: 50%;
+          transition: all 200ms ease-in-out;
+        }
+      }
+    }
+    &-cart > a:hover {
+      .item-count {
+        transform: translateY(-2px);
+      }
+    }
+    &-loginButton {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      > a {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: $darkBlue;
+        border: none;
+        color: white;
+
+        padding: 10px 45px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all 250ms ease-in-out;
+      }
+      > a:hover {
+        opacity: 0.8;
+      }
+    }
+    &-accountInfo {
+      > p {
+        color: white;
+        font-weight: bold;
+        > span {
+          cursor: pointer;
+          text-decoration: underline;
+          color: white;
+        }
+      }
+      position: relative;
+      &-menu {
+        visibility: hidden;
+        transition: all 200ms ease-in-out;
+        transform: translateY(20px);
+        width: 240px;
+        position: absolute;
+        top: 30px;
+        background-color: white;
+        border-radius: 20px;
+
+        &-item {
+          padding: 20px 20px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          > img {
+          }
+          > p {
+          }
+          > a {
+            text-decoration: none;
+            color: $darkBlue;
+          }
+          > a:hover {
+            color: $lightBlue;
+          }
+          .logout {
+            cursor: pointer;
+            font-weight: bold;
+          }
+          .logout:hover {
+            color: rgb(202, 32, 32);
+          }
+        }
+      }
+    }
+  }
+}
+
+.show-menu {
+  visibility: visible;
+  transform: translateY(0px);
+}
