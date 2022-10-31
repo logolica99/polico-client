@@ -6,4 +6,17 @@
   padding-top: 20px;
   margin-bottom: 40px;
   border-top: 4px solid $lightBlue;
+
+  @include breakpoint-down(medium){
+    .credit{
+      font-size: 12px;
+    }
+    >a{
+      display: flex;
+      justify-content: flex-end;
+      >img{
+        width: 50%;
+      }
+    }
+  }
 }
