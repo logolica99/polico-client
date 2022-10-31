@@ -27,12 +27,14 @@ export default function Nav() {
             <img src={search} alt="" />
           </div>
         </div>
-        <div className="nav-wrapper-cart">
-          <Link to="/wishlist">
-            <img src={cart} alt="" />
-            <div className="item-count">3</div>
-          </Link>
-        </div>
+        {loggedIn ? (
+          <div className="nav-wrapper-cart">
+            <Link to="/wishlist">
+              <img src={cart} alt="" />
+              <div className="item-count">3</div>
+            </Link>
+          </div>
+        ) : null}
         {loggedIn ? (
           <div className="nav-wrapper-accountInfo">
             <p>

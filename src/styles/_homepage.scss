@@ -1,0 +1,77 @@
+.homepage {
+  &-hero {
+    background-color: $lightBlue;
+    padding: 80px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    > h1 {
+      color: white;
+      > span {
+        font-family: "Josefin Sans", sans-serif;
+      }
+    }
+    > h3 {
+      color: white;
+      @include breakpoint-down(medium) {
+        font-size: 16px;
+      }
+    }
+  }
+  &-categories {
+    &-heading {
+      margin: 40px 0px;
+      > h3 {
+      }
+      > p {
+        color: $darkBlue;
+      }
+    }
+    &-wrapper {
+      margin-bottom: 200px;
+      @include breakpoint-down(small) {
+        margin-bottom: 100px;
+      }
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 20px;
+      column-gap: 20px;
+      justify-items: center;
+
+      @include breakpoint-down(medium) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include breakpoint-down(small) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      &-item {
+        border-radius: 20px;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+
+        text-decoration: none;
+        padding: 20px;
+        transition: all 200ms ease-in-out;
+        > img {
+          height: 100px;
+        }
+        > h4 {
+          margin-top: 20px;
+          text-align: center;
+          color: $darkBlue;
+        }
+      }
+      &-item:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+    }
+  }
+}
