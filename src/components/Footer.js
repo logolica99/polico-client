@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="footer margin-x">
       <p className="credit">
-        Made with 💗 by <a href="https://github.com/logolica99">logolica99</a>
+        Made with 💗 by <a href="https://github.com/logolica99">logolica9</a>
       </p>
 
       <Link to="/">

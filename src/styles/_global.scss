@@ -6,7 +6,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  overflow-x: hidden;
+}
 h1,
 h2,
 h3 {
@@ -16,6 +18,9 @@ h3 {
 .margin-x {
   width: 75%;
   margin: auto;
+  @include breakpoint-down(large){
+    width: 90%;
+  }
 }
 
 body {

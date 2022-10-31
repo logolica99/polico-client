@@ -6,9 +6,12 @@ import user from "../assets/icons/user.svg";
 import add from "../assets/icons/add.svg";
 import logout from "../assets/icons/logout.svg";
 import { Link } from "react-router-dom";
+import { FiMenu } from "react-icons/fi";
 
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false);
 
   return (
     <div className="nav">
@@ -19,7 +22,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="nav-wrapper-search">
-          <input type="text" />
+          <input type="text" placeholder="Search..." />
           <div className="nav-wrapper-search-button">
             <img src={search} alt="" />
           </div>
@@ -30,45 +33,77 @@ export default function Nav() {
             <div className="item-count">3</div>
           </Link>
         </div>
-        {/* <div className="nav-wrapper-loginButton">
-          <Link to="/login">LOGIN</Link>
-        </div> */}
-        <div className="nav-wrapper-accountInfo">
-          <p>
-            Hello,{" "}
-            <span
+        {loggedIn ? (
+          <div className="nav-wrapper-accountInfo">
+            <p>
+              Hello,{" "}
+              <span
+                onMouseOver={() => setShowMenu(true)}
+                onMouseOut={() => setShowMenu(false)}
+                className
+              >
+                John Doe
+              </span>
+            </p>
+
+            <div
               onMouseOver={() => setShowMenu(true)}
               onMouseOut={() => setShowMenu(false)}
+              className={`nav-wrapper-accountInfo-menu ${
+                showMenu ? "show-menu" : ""
+              }`}
             >
-              John Doe
-            </span>
-          </p>
+              <div className="nav-wrapper-accountInfo-menu-item">
+                <img src={user} alt="" />
+                <Link to="/account">
+                  <p>My Account</p>
+                </Link>
+              </div>
+              <div className="nav-wrapper-accountInfo-menu-item">
+                <img src={add} alt="" />
+                <Link to="/create-listing">
+                  <p>Create new listing</p>
+                </Link>
+              </div>
+              <div className="nav-wrapper-accountInfo-menu-item">
+                <img src={logout} alt="" />
 
-          <div
-            onMouseOver={() => setShowMenu(true)}
-            onMouseOut={() => setShowMenu(false)}
-            className={`nav-wrapper-accountInfo-menu ${
-              showMenu ? "show-menu" : ""
-            }`}
-          >
-            <div className="nav-wrapper-accountInfo-menu-item">
-              <img src={user} alt="" />
-              <Link to="/account">
-                <p>My Account</p>
-              </Link>
-            </div>
-            <div className="nav-wrapper-accountInfo-menu-item">
-              <img src={add} alt="" />
-              <Link to="/create-listing">
-                <p>Create new listing</p>
-              </Link>
-            </div>
-            <div className="nav-wrapper-accountInfo-menu-item">
-              <img src={logout} alt="" />
-
-              <p className="logout">LOGOUT</p>
+                <p className="logout">LOGOUT</p>
+              </div>
             </div>
           </div>
+        ) : (
+          <div className="nav-wrapper-loginButton">
+            <Link to="/login">LOGIN</Link>
+          </div>
+        )}
+        {loggedIn ? (
+          <FiMenu
+            className="nav-wrapper-accountInfo-hamburger"
+            onClick={() => {
+              setShowSideMenu(!showSideMenu);
+            }}
+            size={20}
+          />
+        ) : null}
+      </div>
+      <div
+        className={`${
+          showSideMenu ? "nav-sidemenu show-sidemenu" : "nav-sidemenu"
+        }`}
+      >
+        <div className="nav-sidemenu-item">
+          <img src={user} alt="" />
+          <Link to="/account">My Account</Link>
+        </div>
+        <div className="nav-sidemenu-item">
+          <img src={add} alt="" />
+          <Link to="/create-listing">Create new listing</Link>
+        </div>
+        <div className="nav-sidemenu-item">
+          <img src={logout} alt="" />
+
+          <p className="logout">LOGOUT</p>
         </div>
       </div>
     </div>
