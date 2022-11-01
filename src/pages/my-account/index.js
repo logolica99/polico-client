@@ -1,4 +1,6 @@
 import React from "react";
+import User from "../../assets/icons/account.svg";
+import Add from "../../assets/icons/add-white.svg";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
@@ -31,12 +33,29 @@ export default function index() {
     console.log(values);
   };
   return (
-    <div className="register margin-x">
-      <div className="register-heading">
-        <h2>Create your polico account</h2>
+    <div className="my-account margin-x">
+      <div className="my-account-heading">
+        <div className="my-account-heading-info">
+          <img src={User} alt="" />
+          <div className="my-account-heading-info-greet">
+
+          <p>Hello,</p>
+          <h4>John Doe</h4>
+          </div>
+        </div>
+        <div className="my-account-heading-redirects">
+          <Link className="my-account-heading-redirects-add">
+            <img src={Add} alt="" />
+            Upload a new listing
+          </Link>
+          <Link>My Listings</Link>
+        </div>
       </div>
-      <div className="register-form">
-        <div className="register-form-wrapper">
+      <div className="my-account-form">
+        <div className="my-account-form-heading">
+          <h2>Change Account Details</h2>
+        </div>
+        <div className="my-account-form-wrapper">
           <Formik
             onSubmit={handleFormSubmit}
             initialValues={initialValues}
@@ -62,7 +81,7 @@ export default function index() {
                 />
 
                 {errors.fullName && touched.fullName ? (
-                  <p className="register-form-wrapper-error">
+                  <p className="my-account-form-wrapper-error">
                     {errors.fullName}
                   </p>
                 ) : null}
@@ -76,7 +95,7 @@ export default function index() {
                   name="phone"
                   value={values.phone}
                 />
-                <p className="register-form-wrapper-error">
+                <p className="my-account-form-wrapper-error">
                   {errors.phone && touched.phone ? (
                     <div>{errors.phone}</div>
                   ) : null}
@@ -90,7 +109,7 @@ export default function index() {
                   name="password"
                   value={values.password}
                 />
-                <p className="register-form-wrapper-error">
+                <p className="my-account-form-wrapper-error">
                   {errors.password && touched.password ? (
                     <div>{errors.password}</div>
                   ) : null}
@@ -104,23 +123,15 @@ export default function index() {
                   name="passwordConfirmation"
                   value={values.passwordConfirmation}
                 />
-                <p className="register-form-wrapper-error">
+                <p className="my-account-form-wrapper-error">
                   {errors.passwordConfirmation &&
                   touched.passwordConfirmation ? (
                     <div>{errors.passwordConfirmation}</div>
                   ) : null}
                 </p>
-                <div className="register-form-wrapper-redirect">
-                  <p>Existing User? </p>
-                  <Link to="/login">Login</Link>
-                </div>
-                <div className="register-form-wrapper-submit">
-                  <button
-                    type="submit"
-                    className="register-form-wrapper-submit"
-                  >
-                    Sign Up
-                  </button>
+
+                <div className="my-account-form-wrapper-submit">
+                  <button type="submit">Change</button>
                 </div>
               </form>
             )}

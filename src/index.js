@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
+import AccountPage from "./pages/my-account";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
@@ -16,11 +17,13 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Nav />
+      <div className="nav-padding"></div>
       <Routes>
-        <Route path="/*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/my-account" element={<AccountPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

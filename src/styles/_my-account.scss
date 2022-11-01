@@ -1,0 +1,151 @@
+.my-account {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0px;
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    &-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      > img {
+        width: 40%;
+      }
+      &-greet {
+        > p {
+          color: $darkBlue;
+        }
+        h4 {
+          color: $darkBlue;
+          font-size: 26px;
+          margin-top: 10px;
+        }
+      }
+    }
+    &-redirects {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      @include breakpoint-down(medium) {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .my-account-heading-redirects-add {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+      > a {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: $darkBlue;
+        border: none;
+        color: white;
+
+        padding: 10px 45px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all 250ms ease-in-out;
+
+        @include breakpoint-down(medium) {
+          padding: 10px 30px;
+          font-size: 14px;
+        }
+        > img {
+        }
+      }
+      &-add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+
+  &-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint-down(small) {
+      padding: 30px 10px;
+    }
+    &-heading {
+      margin-bottom: 20px;
+      @include breakpoint-down(medium) {
+        margin-bottom: 10px;
+        
+      }
+      > h2 {
+        @include breakpoint-down(medium) {
+          font-size: 20px;
+        }
+      }
+    }
+    &-wrapper {
+      > form {
+        > p {
+          color: $darkBlue;
+          font-weight: bold;
+          margin: 10px 0px;
+        }
+        > p {
+          margin-top: 20px;
+        }
+        .my-account-form-wrapper-error {
+          margin: 0;
+          color: red;
+          font-weight: normal;
+          font-size: 14px;
+        }
+        > input {
+          font-size: 20px;
+          outline: none;
+          padding: 10px 20px;
+          border: 1px solid black;
+          font-family: "Montserrat", sans-serif;
+
+          @include breakpoint-down(small) {
+            padding: 10px 5px;
+            font-size: 16px;
+          }
+        }
+      }
+      &-submit {
+        margin-top: 40px;
+        > button {
+          text-decoration: none;
+          cursor: pointer;
+          background-color: $darkBlue;
+          border: none;
+          color: white;
+
+          padding: 10px 45px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold;
+          border-radius: 4px;
+          transition: all 250ms ease-in-out;
+          @include breakpoint-down(medium) {
+            padding: 10px 30px;
+            font-size: 14px;
+          }
+        }
+        > button:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

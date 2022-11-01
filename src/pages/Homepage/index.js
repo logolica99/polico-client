@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 export default function Homepage() {
   return (
-    <div className="homepage nav-padding">
+    <div className="homepage">
       <div className="homepage-hero">
         <h1>
           Welcome to <span>Polico</span>
