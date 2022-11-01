@@ -1,0 +1,81 @@
+.register {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &-heading {
+    margin-bottom: 30px;
+    > h2 {
+    }
+  }
+
+  &-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint-down(small) {
+      padding: 30px 10px;
+    }
+    &-wrapper {
+      > form {
+        > p {
+          color: $darkBlue;
+          font-weight: bold;
+          margin: 10px 0px;
+        }
+        > p {
+          margin-top: 20px;
+        }
+        .register-form-wrapper-error {
+          margin: 0;
+          color: red;
+          font-weight: normal;
+          font-size: 14px;
+        }
+        > input {
+          font-size: 20px;
+          outline: none;
+          padding: 10px 20px;
+          border: 1px solid black;
+          font-family: "Montserrat", sans-serif;
+
+          @include breakpoint-down(small) {
+            padding: 10px 5px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-redirect {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0px;
+        > p {
+          color: $darkBlue;
+        }
+        > a {
+          color: $lightBlue;
+          text-decoration: none;
+        }
+      }
+      &-submit {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: $darkBlue;
+        border: none;
+        color: white;
+
+        padding: 10px 45px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all 250ms ease-in-out;
+        @include breakpoint-down(medium) {
+          padding: 10px 20px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
