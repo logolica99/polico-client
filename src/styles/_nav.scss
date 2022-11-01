@@ -1,6 +1,16 @@
 .nav {
   background-color: $lightBlue;
-  position: relative;
+
+  position: fixed;
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint-down(small) {
+    height: 7vh;
+  }
 
   &-wrapper {
     padding: 16px 0px;
@@ -43,7 +53,6 @@
         @include breakpoint-down(small) {
           padding: 3px 0px;
           padding-left: 12px;
-          border-radius: 2px;
         }
       }
 
@@ -211,11 +220,13 @@
     @include breakpoint-up(medium) {
       display: none;
     }
-    position: absolute;
+    position: fixed;
     background-color: $lightBlue;
     height: 100vh;
-    overflow-y: hidden;
-  
+    margin-top: 107vh;
+    left: 0;
+    border-right: 1px solid $darkBlue;
+
     transform: translateX(-100%);
     transition: 200ms ease-in-out;
 

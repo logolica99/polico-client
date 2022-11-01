@@ -23,7 +23,7 @@ export default function index() {
     console.log(values);
   };
   return (
-    <div className="register margin-x">
+    <div className="register margin-x nav-padding">
       <div className="register-heading">
         <h2>Welcome Back to Polico!</h2>
       </div>

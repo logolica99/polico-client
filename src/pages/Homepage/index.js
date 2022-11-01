@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 export default function Homepage() {
   return (
-    <div className="homepage">
+    <div className="homepage nav-padding">
       <div className="homepage-hero">
         <h1>
           Welcome to <span>Polico</span>
@@ -40,7 +40,7 @@ export default function Homepage() {
             <img src={Sports} alt="" />
             <h4>Vehicles</h4>
           </Link>
-       
+
           <Link className="homepage-categories-wrapper-item">
             <img src={Stationaries} alt="" />
             <h4>Stationaries</h4>
