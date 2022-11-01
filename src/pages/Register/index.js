@@ -18,7 +18,7 @@ const userSchema = yup.object().shape({
   phone: yup
     .string()
     .matches(phoneRegExp, "Phone number is not valid")
-    .required("required"),
+    .required("Required"),
   password: yup.string().required("Password is required"),
   passwordConfirmation: yup
     .string()
@@ -113,9 +113,14 @@ export default function index() {
                   <p>Existing User? </p>
                   <Link to="/login">Login</Link>
                 </div>
-                <button type="submit" className="register-form-wrapper-submit">
-                  Sign Up
-                </button>
+                <div className="register-form-wrapper-submit">
+                  <button
+                    type="submit"
+                    className="register-form-wrapper-submit"
+                  >
+                    Sign Up
+                  </button>
+                </div>
               </form>
             )}
           </Formik>

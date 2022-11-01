@@ -58,22 +58,32 @@
           color: $lightBlue;
           text-decoration: none;
         }
+        > a:hover {
+          text-decoration: underline;
+        }
       }
       &-submit {
-        text-decoration: none;
-        cursor: pointer;
-        background-color: $darkBlue;
-        border: none;
-        color: white;
+        display: flex;
+        justify-content: flex-end;
+        > button {
+          text-decoration: none;
+          cursor: pointer;
+          background-color: $darkBlue;
+          border: none;
+          color: white;
 
-        padding: 10px 45px;
-        font-family: "Montserrat", sans-serif;
-        font-weight: bold;
-        border-radius: 4px;
-        transition: all 250ms ease-in-out;
-        @include breakpoint-down(medium) {
-          padding: 10px 20px;
-          font-size: 12px;
+          padding: 10px 45px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold;
+          border-radius: 4px;
+          transition: all 250ms ease-in-out;
+          @include breakpoint-down(medium) {
+            padding: 10px 30px;
+            font-size: 14px;
+          }
+        }
+        > button:hover {
+          opacity: 0.8;
         }
       }
     }
