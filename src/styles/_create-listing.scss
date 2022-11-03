@@ -1,0 +1,162 @@
+.create-listing {
+  &-wrapper {
+    &-heading {
+      padding: 20px 0px;
+      margin: 30px 0px;
+      border-bottom: 1px solid $darkBlue;
+      > h2 {
+        font-size: 2rem;
+        margin-left: 20px;
+        @include breakpoint-down(small) {
+          font-size: 1.5rem;
+        }
+      }
+      @include breakpoint-down(small) {
+        margin: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &-form {
+      > form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        > select {
+          margin: 20px 0px;
+          outline: none;
+
+          padding: 20px;
+          font-family: "montserrat";
+          font-weight: bold;
+          color: $darkBlue;
+          font-size: 16px;
+          > option {
+            color: $darkBlue;
+          }
+        }
+      }
+      &-error {
+        > p {
+          color: red;
+        }
+      }
+
+      &-input {
+        margin: 16px 0px;
+        width: 50%;
+        > p {
+          font-weight: bold;
+          color: $darkBlue;
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+        > input {
+          width: 100%;
+          width: 100%;
+          border-radius: 6px;
+          border: 1px solid $darkBlue;
+          height: 30px;
+          padding: 20px;
+          font-family: "montserrat";
+          font-size: 16px;
+          outline: none;
+        }
+        > textarea {
+          font-family: "montserrat";
+          resize: vertical;
+          width: 100%;
+          outline: none;
+          padding: 20px;
+          font-size: 16px;
+          height: 80px;
+        }
+      }
+      &-image_uploads {
+        margin-top: 20px;
+
+        > h2 {
+          margin: 20px 0px;
+        }
+        > p {
+          margin-top: 8px;
+          color: red;
+        }
+        &-items {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          justify-content: center;
+          @include breakpoint-down(small) {
+            gap: 15px;
+          }
+
+          &-single {
+            background-color: white;
+            border: 1px solid $darkBlue;
+            width: 160px;
+            height: 160px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include breakpoint-down(small) {
+              width: 130px;
+              height: 130px;
+            }
+
+            &-thumb {
+              width: 150px;
+              height: 150px;
+              padding: 10px;
+
+              @include breakpoint-down(small) {
+                width: 120px;
+                height: 120px;
+              }
+            }
+            &-gallery {
+            }
+          }
+        }
+      }
+      &-submit {
+        margin: 20px 0px;
+        display: flex;
+        justify-content: flex-end;
+        @include breakpoint-down(small) {
+          justify-content: center;
+          margin: 40px 0px;
+        }
+        > button {
+          cursor: pointer;
+          background-color: $darkBlue;
+          border: none;
+          color: white;
+
+          padding: 10px 45px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold;
+          border-radius: 4px;
+          transition: all 250ms ease-in-out;
+          @include breakpoint-down(medium) {
+            padding: 10px 30px;
+            font-size: 14px;
+          }
+        }
+        > button:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.inner-margin-x {
+  width: 50%;
+  @include breakpoint-down(small) {
+    width: 85%;
+  }
+}

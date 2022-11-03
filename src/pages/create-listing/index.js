@@ -35,7 +35,7 @@ export default function CreateListing() {
   };
   return (
     <div className="create-listing">
-      <div className="create-listing-wrapper">
+      <div className="create-listing-wrapper margin-x">
         <div className="create-listing-wrapper-heading">
           <h2>Create a listing</h2>
         </div>
@@ -59,7 +59,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 onBlur={handleBlur}
               >
-                <select id="division">
+                <select id="division" className="inner-margin-x">
                   <option value="" selected disabled hidden>
                     Select a city of division
                   </option>
@@ -78,8 +78,8 @@ export default function CreateListing() {
                   ) : null}
                 </div>
                 <select
+                  className="inner-margin-x"
                   id="university"
-                  onSubmit={handleSubmit}
                   value={values.university}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -94,48 +94,53 @@ export default function CreateListing() {
                     <p>{errors.university}</p>
                   ) : null}
                 </div>
-                <p>Product title</p>
-                <input
-                  type="text"
-                  onSubmit={handleSubmit}
-                  value={values.title}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  name="title"
-                />
-                <div className="create-listing-wrapper-form-error">
-                  {errors.title && touched.title ? <p>{errors.title}</p> : null}
+                <div className="create-listing-wrapper-form-input inner-margin-x">
+                  <p>Product title</p>
+
+                  <input
+                    type="text"
+                    value={values.title}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    name="title"
+                  />
+                  <div className="create-listing-wrapper-form-error">
+                    {errors.title && touched.title ? (
+                      <p>{errors.title}</p>
+                    ) : null}
+                  </div>
                 </div>
-                <p>Description</p>
-                <textarea
-                  style={{ resize: "vertical" }}
-                  onSubmit={handleSubmit}
-                  value={values.description}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  name="description"
-                ></textarea>
-                <div className="create-listing-wrapper-form-error">
-                  {errors.description && touched.description ? (
-                    <p>{errors.description}</p>
-                  ) : null}
+                <div className="create-listing-wrapper-form-input inner-margin-x">
+                  <p>Description</p>
+                  <textarea
+                    value={values.description}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    name="description"
+                  ></textarea>
+                  <div className="create-listing-wrapper-form-error">
+                    {errors.description && touched.description ? (
+                      <p>{errors.description}</p>
+                    ) : null}
+                  </div>
+                </div>
+                <div className="create-listing-wrapper-form-input inner-margin-x">
+                  <p>Product Price(Tk)</p>
+                  <input
+                    type="number"
+                    name="price"
+                    value={values.price}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <div className="create-listing-wrapper-form-error">
+                    {errors.price && touched.price ? (
+                      <p>{errors.price}</p>
+                    ) : null}
+                  </div>
                 </div>
 
-                <p
-                  onSubmit={handleSubmit}
-                  value={values.price}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  name="price"
-                >
-                  Product Price(Tk)
-                </p>
-                <input type="number" name="price" />
-                <div className="create-listing-wrapper-form-error">
-                  {errors.price && touched.price ? <p>{errors.price}</p> : null}
-                </div>
-
-                <div className="create-listing-wrapper-form-image_uploads">
+                <div className="create-listing-wrapper-form-image_uploads inner-margin-x">
                   <h2>Add up to 4 photos</h2>
                   <input
                     type="file"
@@ -177,104 +182,118 @@ export default function CreateListing() {
                     ref={image4Ref}
                     hidden
                   />
-
-                  <div
-                    className="create-listing-wrapper-form-image_uploads-item"
-                    style={{ cursor: "pointer" }}
-                  >
-                    {image1 ? (
-                      <img
-                        src={URL.createObjectURL(image1)}
-                        alt=""
-                        className="create-listing-wrapper-form-image_uploads-item-thumb"
-                      ></img>
-                    ) : (
-                      <img
-                        src={Gallery}
-                        alt=""
-                        className="create-listing-wrapper-form-image_uploads-item-gallery"
-                        onClick={() => {
-                          image1Ref.current.click();
-                        }}
-                      />
-                    )}
-                  </div>
-                  <div
-                    className="create-listing-wrapper-form-image_uploads-item"
-                    style={{
-                      opacity: image1 ? 1 : 0.6,
-                      cursor: image1 ? "pointer" : "default",
-                    }}
-                  >
-                    {image2 ? (
-                      <img
-                        src={URL.createObjectURL(image2)}
-                        className="create-listing-wrapper-form-image_uploads-item-thumb"
-                        alt=""
-                      ></img>
-                    ) : (
-                      <img
-                        src={Gallery}
-                        alt=""
-                        className="create-listing-wrapper-form-image_uploads-item-gallery"
-                        onClick={() => {
+                  <div className="create-listing-wrapper-form-image_uploads-items">
+                    <div
+                      className="create-listing-wrapper-form-image_uploads-items-single"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        image1Ref.current.click();
+                      }}
+                    >
+                      {image1 ? (
+                        <img
+                          src={URL.createObjectURL(image1)}
+                          alt=""
+                          className="create-listing-wrapper-form-image_uploads-items-single-thumb"
+                        ></img>
+                      ) : (
+                        <img
+                          src={Gallery}
+                          alt=""
+                          className="create-listing-wrapper-form-image_uploads-items-single-gallery"
+                        />
+                      )}
+                    </div>
+                    <div
+                      className="create-listing-wrapper-form-image_uploads-items-single"
+                      style={{
+                        opacity: image1 ? 1 : 0.6,
+                        cursor: image1 ? "pointer" : "default",
+                      }}
+                      onClick={() => {
+                        if (image1) {
                           image2Ref.current.click();
-                        }}
-                      />
-                    )}
-                  </div>
-                  <div
-                    className="create-listing-wrapper-form-image_uploads-item"
-                    style={{
-                      opacity: image2 ? 1 : 0.6,
-                      cursor: image2 ? "pointer" : "default",
-                    }}
-                  >
-                    {image3 ? (
-                      <img
-                        src={URL.createObjectURL(image3)}
-                        className="create-listing-wrapper-form-image_uploads-item-thumb"
-                        alt=""
-                      ></img>
-                    ) : (
-                      <img
-                        src={Gallery}
-                        alt=""
-                        className="create-listing-wrapper-form-image_uploads-item-gallery"
-                        onClick={() => {
+                        }
+                      }}
+                    >
+                      {image2 ? (
+                        <img
+                          src={URL.createObjectURL(image2)}
+                          className="create-listing-wrapper-form-image_uploads-items-single-thumb"
+                          alt=""
+                        ></img>
+                      ) : (
+                        <img
+                          src={Gallery}
+                          alt=""
+                          className="create-listing-wrapper-form-image_uploads-items-single-gallery"
+                        />
+                      )}
+                    </div>
+                    <div
+                      className="create-listing-wrapper-form-image_uploads-items-single"
+                      style={{
+                        opacity: image2 ? 1 : 0.6,
+                        cursor: image2 ? "pointer" : "default",
+                      }}
+                      onClick={() => {
+                        if (image2) {
                           image3Ref.current.click();
-                        }}
-                      />
-                    )}
-                  </div>
-                  <div
-                    className="create-listing-wrapper-form-image_uploads-item"
-                    style={{
-                      opacity: image3 ? 1 : 0.6,
-                      cursor: image3 ? "pointer" : "default",
-                    }}
-                  >
-                    {image4 ? (
-                      <img
-                        src={URL.createObjectURL(image4)}
-                        className="create-listing-wrapper-form-image_uploads-item-thumb"
-                        alt=""
-                      ></img>
-                    ) : (
-                      <img
-                        src={Gallery}
-                        alt=""
-                        className="create-listing-wrapper-form-image_uploads-item-gallery"
-                        onClick={() => {
+                        }
+                      }}
+                    >
+                      {image3 ? (
+                        <img
+                          src={URL.createObjectURL(image3)}
+                          className="create-listing-wrapper-form-image_uploads-items-single-thumb"
+                          alt=""
+                        ></img>
+                      ) : (
+                        <img
+                          src={Gallery}
+                          alt=""
+                          className="create-listing-wrapper-form-image_uploads-items-single-gallery"
+                        />
+                      )}
+                    </div>
+                    <div
+                      className="create-listing-wrapper-form-image_uploads-items-single"
+                      style={{
+                        opacity: image3 ? 1 : 0.6,
+                        cursor: image3 ? "pointer" : "default",
+                      }}
+                      onClick={() => {
+                        if (image3) {
                           image4Ref.current.click();
-                        }}
-                      />
-                    )}
+                        }
+                      }}
+                    >
+                      {image4 ? (
+                        <img
+                          src={URL.createObjectURL(image4)}
+                          className="create-listing-wrapper-form-image_uploads-items-single-thumb"
+                          alt=""
+                        ></img>
+                      ) : (
+                        <img
+                          src={Gallery}
+                          alt=""
+                          className="create-listing-wrapper-form-image_uploads-items-single-gallery"
+                        />
+                      )}
+                    </div>
                   </div>
                   {image1 ? "" : <p>You must upload at least one photo</p>}
                 </div>
-
-                <button type="submit">Post Ad</button>
+                <div className="create-listing-wrapper-form-submit inner-margin-x">
+                  <button
+                    type="submit"
+                    disabled={!image1}
+                    style={{ opacity: image1 ? 1 : 0.6 }}
+                  >
+                    Post Ad
+                  </button>
+                </div>
               </form>
             )}
           </Formik>
