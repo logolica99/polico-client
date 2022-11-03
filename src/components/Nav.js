@@ -10,7 +10,7 @@ import { FiMenu } from "react-icons/fi";
 
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   return (
@@ -42,7 +42,7 @@ export default function Nav() {
               <span
                 onMouseOver={() => setShowMenu(true)}
                 onMouseOut={() => setShowMenu(false)}
-                className
+                
               >
                 John Doe
               </span>
@@ -90,19 +90,26 @@ export default function Nav() {
         ) : null}
       </div>
       <div
-        className={`${
-          showSideMenu ? "nav-sidemenu show-sidemenu" : "nav-sidemenu"
-        }`}
+        className={showSideMenu ? "nav-sidemenu show-sidemenu" : "nav-sidemenu"}
       >
-        <div className="nav-sidemenu-item">
+        <div
+          className="nav-sidemenu-item"
+          onClick={() => setShowSideMenu(false)}
+        >
           <img src={user} alt="" />
           <Link to="/account">My Account</Link>
         </div>
-        <div className="nav-sidemenu-item">
+        <div
+          className="nav-sidemenu-item"
+          onClick={() => setShowSideMenu(false)}
+        >
           <img src={add} alt="" />
           <Link to="/create-listing">Create new listing</Link>
         </div>
-        <div className="nav-sidemenu-item">
+        <div
+          className="nav-sidemenu-item"
+          onClick={() => setShowSideMenu(false)}
+        >
           <img src={logout} alt="" />
 
           <p className="logout">LOGOUT</p>
