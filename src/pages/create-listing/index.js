@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Gallery from "../../assets/icons/gallery.svg";
-import DemoUpload from "../../components/DemoUpload";
+import UniversityData from "./university.json";
 
 const initialValues = {
   division: "",
@@ -53,13 +53,14 @@ export default function CreateListing() {
               handleChange,
               handleSubmit,
             }) => (
-              <form
-                onSubmit={handleSubmit}
-                value={values.division}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              >
-                <select id="division" className="inner-margin-x">
+              <form onSubmit={handleSubmit}>
+                <select
+                  id="division"
+                  className="inner-margin-x"
+                  value={values.division}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                >
                   <option value="" selected disabled hidden>
                     Select a city of division
                   </option>
@@ -83,11 +84,15 @@ export default function CreateListing() {
                   value={values.university}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  disabled={values.division.length > 0 ? false : true}
                 >
                   <option value="" defaultValue disabled hidden>
                     Select a university
                   </option>
-                  <option value=""></option>
+                  {values.division &&
+                    UniversityData[values.division].map((val) => (
+                      <option value={val}>{val}</option>
+                    ))}
                 </select>
                 <div className="create-listing-wrapper-form-error">
                   {errors.university && touched.university ? (

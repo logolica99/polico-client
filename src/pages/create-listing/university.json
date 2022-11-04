@@ -1,0 +1,19 @@
+{
+  "Barishal": ["University of Barisal"],
+  "Dhaka": [
+    "University of Dhaka",
+    "Jahangirnagar University",
+    "Jagannath University",
+    "Bangladesh University of Professionals",
+    "Bangabandhu Sheikh Mujibur Rahman University"
+  ],
+  "Chattogram": ["University of Chittagong", "Comilla University"],
+  "Khulna": ["Islamic University, Bangladesh", "Khulna University"],
+  "Mymensingh": [
+    "Jatiya Kabi Kazi Nazrul Islam University",
+    "Sheikh Hasina University"
+  ],
+  "Rajshahi": ["University of Rajshahi", "Rabindra University, Bangladesh"],
+  "Rangpur": ["Begum Rokeya University"],
+  "Sylhet": ["Shahjalal University of Science and Technology"]
+}
