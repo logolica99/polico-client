@@ -29,6 +29,11 @@ export default function CreateListing() {
   const image2Ref = useRef();
   const image3Ref = useRef();
   const image4Ref = useRef();
+  const [submitHover, setSubmitHover] = useState(false);
+
+  const buttonHoverStyle = {
+    opacity: submitHover ? 0.8 : 1,
+  };
 
   const handleFormSubmit = (values) => {
     console.log(values);
@@ -61,7 +66,7 @@ export default function CreateListing() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
-                  <option value="" selected disabled hidden>
+                  <option value="" defaultChecked disabled hidden>
                     Select a city of division
                   </option>
                   <option value="Barishal">Barishal Division</option>
@@ -91,7 +96,9 @@ export default function CreateListing() {
                   </option>
                   {values.division &&
                     UniversityData[values.division].map((val) => (
-                      <option value={val}>{val}</option>
+                      <option value={val} key={val}>
+                        {val}
+                      </option>
                     ))}
                 </select>
                 <div className="create-listing-wrapper-form-error">
@@ -294,7 +301,17 @@ export default function CreateListing() {
                   <button
                     type="submit"
                     disabled={!image1}
-                    style={{ opacity: image1 ? 1 : 0.6 }}
+                    onMouseEnter={() => {
+                      setSubmitHover(true);
+                    }}
+                    onMouseLeave={() => {
+                      setSubmitHover(false);
+                    }}
+                    style={
+                      image1
+                        ? buttonHoverStyle
+                        : { opacity: 0.7, cursor: "default" }
+                    }
                   >
                     Post Ad
                   </button>
