@@ -38,17 +38,19 @@ export default function index() {
         <div className="my-account-heading-info">
           <img src={User} alt="" />
           <div className="my-account-heading-info-greet">
-
-          <p>Hello,</p>
-          <h4>John Doe</h4>
+            <p>Hello,</p>
+            <h4>John Doe</h4>
           </div>
         </div>
         <div className="my-account-heading-redirects">
-          <Link className="my-account-heading-redirects-add">
+          <Link
+            className="my-account-heading-redirects-add"
+            to="/create-listing"
+          >
             <img src={Add} alt="" />
             Upload a new listing
           </Link>
-          <Link>My Listings</Link>
+          <Link to="/listings">My Listings</Link>
         </div>
       </div>
       <div className="my-account-form">

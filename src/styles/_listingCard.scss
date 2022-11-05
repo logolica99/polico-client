@@ -1,0 +1,65 @@
+.listingCard {
+  margin: 30px 0px;
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint-down(small) {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  > img {
+    width: 10%;
+    @include breakpoint-down(small) {
+      width: 100%;
+      margin: 30px 0px;
+    }
+  }
+  &-info {
+    margin: 0px 40px;
+    width: 100%;
+    &-wrapper {
+      &-heading {
+      }
+      &-location {
+        color: $darkBlue;
+        margin: 15px 0px;
+        color: #646464;
+      }
+      &-price {
+        color: $lightBlue;
+        font-weight: bold;
+      }
+    }
+  }
+  &-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint-down(small) {
+      width: 100%;
+      margin: 30px 0px;
+    }
+    > button {
+      cursor: pointer;
+      background-color: $lightRed;
+      color: $darkRed;
+      font-size: 1rem;
+      border: none;
+      font-family: "montserrat";
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 10px;
+      transition: all 300ms ease-in-out;
+    }
+    > button:hover {
+      color: white;
+      background-color: rgb(250, 66, 66);
+    }
+  }
+}

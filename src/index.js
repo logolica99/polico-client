@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import CreateListing from "./pages/create-listing";
+import YourListing from "./pages/your-listing";
+import Wishlist from "./pages/wishlist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -26,6 +28,8 @@ root.render(
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/create-listing" element={<CreateListing />} />
+        <Route path="/listings" element={<YourListing />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </BrowserRouter>
