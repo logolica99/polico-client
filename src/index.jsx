@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import CreateListing from "./pages/create-listing";
 import YourListing from "./pages/your-listing";
 import Wishlist from "./pages/wishlist";
+import Search from "./pages/search";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -30,6 +31,7 @@ root.render(
         <Route path="/create-listing" element={<CreateListing />} />
         <Route path="/listings" element={<YourListing />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/product/:query" element={<Search />} />
       </Routes>
       <Footer />
     </BrowserRouter>

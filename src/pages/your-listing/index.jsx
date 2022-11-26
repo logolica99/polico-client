@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ListingCard from "../../components/ListingCard.js";
+import ListingCard from "../../components/ListingCard.jsx";
 import Pagination from "@mui/material/Pagination";
 
-export default function Wishlist() {
+export default function YourListing() {
   const [productData, setProductData] = useState([
     {
       imgSrc:
@@ -35,7 +35,7 @@ export default function Wishlist() {
   return (
     <div className="listings margin-x">
       <div className="listings-heading">
-        <h2>Your Wishlist</h2>
+        <h2>Your Listings</h2>
       </div>
       <div className="listings-cards">
         {productData.map((data) => (

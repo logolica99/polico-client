@@ -42,7 +42,6 @@ export default function Nav() {
               <span
                 onMouseOver={() => setShowMenu(true)}
                 onMouseOut={() => setShowMenu(false)}
-                
               >
                 John Doe
               </span>
