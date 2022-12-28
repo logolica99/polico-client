@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import ListingCard from "../../components/ListingCard.jsx";
+
 import Pagination from "@mui/material/Pagination";
+import ListingCardRemove from "../../components/ListingCardRemove.jsx";
 
 export default function Wishlist() {
   const [productData, setProductData] = useState([
@@ -39,7 +40,7 @@ export default function Wishlist() {
       </div>
       <div className="listings-cards">
         {productData.map((data) => (
-          <ListingCard
+          <ListingCardRemove
             key={data.id}
             imgSrc={data.imgSrc}
             title={data.title}

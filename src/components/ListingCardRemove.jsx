@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ListingCard({
+export default function ListingCardRemove({
   imgSrc,
   title,
   university,
@@ -24,6 +24,9 @@ export default function ListingCard({
             {formatter.format(price)}
           </p>
         </div>
+      </div>
+      <div className="listingCard-button">
+        <button>REMOVE</button>
       </div>
     </div>
   );

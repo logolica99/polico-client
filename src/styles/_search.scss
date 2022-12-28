@@ -1,0 +1,106 @@
+.search {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  gap: 40px;
+
+  &-filter {
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+    flex: 1;
+    &-price {
+      background-color: white;
+      border-radius: 12px;
+      &-heading {
+        border-bottom: 1px solid #c8c4c4;
+        padding: 16px 20px;
+        white-space: nowrap;
+      }
+      &-slider {
+        padding: 22px 40px;
+      }
+      &-range {
+        display: flex;
+        gap: 20px;
+        padding: 0px 40px;
+        padding-bottom: 30px;
+        justify-content: space-between;
+        &-box {
+          border: 1px solid #d9d9d9;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+
+          > p {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    &-location {
+      margin-top: 60px;
+      border-radius: 12px;
+      background-color: white;
+      &-heading {
+        border-bottom: 1px solid #c8c4c4;
+        padding: 16px 20px;
+        white-space: nowrap;
+      }
+      &-locations {
+        padding: 20px 40px;
+        &-item {
+          display: flex;
+          gap: 2px;
+          align-items: center;
+          > p {
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    flex: 3;
+    &-heading {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 28px;
+      border-radius: 8px;
+      @include breakpoint-down(small) {
+        padding: 12px 20px;
+      }
+      > h2 {
+        @include breakpoint-down(small) {
+          font-size: 16px;
+        }
+      }
+      &-sort {
+        display: flex;
+
+        align-items: center;
+        > p {
+          font-weight: bold;
+          color: $lightGray;
+          margin-right: 20px;
+
+          @include breakpoint-down(small) {
+            font-size: 12px;
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+    &-cards {
+    }
+    &-pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+  }
+}
