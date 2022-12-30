@@ -40,3 +40,9 @@ body {
     display: none;
   }
 }
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}

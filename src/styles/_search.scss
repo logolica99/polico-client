@@ -4,15 +4,14 @@
   display: flex;
   gap: 40px;
 
-
-  @include breakpoint-down(medium){
+  @include breakpoint-down(medium) {
     margin-top: 20px;
   }
 
   &-filter {
-    @include breakpoint-down(medium) {
-      display: none;
-    }
+    // @include breakpoint-down(medium) {
+    //   display: none;
+    // }
     flex: 1;
     &-price {
       background-color: white;
@@ -50,6 +49,9 @@
       margin-top: 60px;
       border-radius: 12px;
       background-color: white;
+      @include breakpoint-down(medium) {
+        margin-top: 0px;
+      }
       &-heading {
         border-bottom: 1px solid #c8c4c4;
         padding: 16px 20px;
