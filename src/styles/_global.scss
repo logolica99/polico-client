@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap");
 
-
-
 *,
 body {
   margin: 0;
@@ -34,5 +32,11 @@ body {
   padding-top: 8vh;
   @include breakpoint-down(small) {
     padding-top: 7vh;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
   }
 }

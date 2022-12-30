@@ -4,6 +4,11 @@
   display: flex;
   gap: 40px;
 
+
+  @include breakpoint-down(medium){
+    margin-top: 20px;
+  }
+
   &-filter {
     @include breakpoint-down(medium) {
       display: none;
@@ -64,6 +69,7 @@
   }
   &-content {
     flex: 3;
+
     &-heading {
       background-color: white;
       display: flex;
@@ -93,6 +99,30 @@
             margin-right: 12px;
           }
         }
+      }
+    }
+    &-advancedSearch {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      @include breakpoint-up(large) {
+        display: none;
+      }
+      > button {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: $darkBlue;
+        border: none;
+        color: white;
+
+        padding: 10px 25px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all 250ms ease-in-out;
+      }
+      > button:hover {
+        opacity: 0.8;
       }
     }
     &-cards {

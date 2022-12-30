@@ -134,6 +134,11 @@ export default function Search() {
             </Select>
           </div>
         </div>
+
+        <div className="search-content-advancedSearch ">
+          <div></div>
+          <button>Advanced Search</button>
+        </div>
         <div className="search-content-cards">
           {productData.map((data) => (
             <ListingCard

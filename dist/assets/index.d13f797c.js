@@ -1,0 +1,1 @@
+import{j as e,a as r,L as a}from"./index.0ef82fe6.js";function n(){return e("div",{id:"error-page",className:"nav-padding margin-x",style:{marginBottom:"100px"},children:[r("h1",{children:"Oops!"}),r("p",{children:"Sorry, an unexpected error has occurred."}),r(a,{to:"/",children:"Go to Home"}),r("p",{})]})}export{n as default};
