@@ -24,36 +24,60 @@ export default function Homepage() {
           <p>Get Your Desired Product from Featured Category!</p>
         </div>
         <div className="homepage-categories-wrapper">
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Electronics"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={Electronics} alt="" />
             <h4>Electronics</h4>
           </Link>
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Home & Appliances"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={HomeAppliances} alt="" />
             <h4>Home & Appliances</h4>
           </Link>
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Vehicles"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={Vechicles} alt="" />
             <h4>Vehicles</h4>
           </Link>
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Sports"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={Sports} alt="" />
-            <h4>Vehicles</h4>
+            <h4>Sports</h4>
           </Link>
 
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Stationaries"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={Stationaries} alt="" />
             <h4>Stationaries</h4>
           </Link>
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Women's Fashion & Beauty"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={WomensBeauty} alt="" />
             <h4>Women's Fashion & Beauty</h4>
           </Link>
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Men's Fashion & Grooming"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={MensFashion} alt="" />
             <h4>Men's Fashion & Grooming</h4>
           </Link>
-          <Link className="homepage-categories-wrapper-item">
+          <Link
+            to="/search/Pets & Animals"
+            className="homepage-categories-wrapper-item"
+          >
             <img src={Pets} alt="" />
             <h4>Pets & Animals</h4>
           </Link>

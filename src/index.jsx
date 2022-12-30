@@ -1,10 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "react-image-gallery/styles/scss/image-gallery.scss";
+
+import "react-image-gallery/styles/css/image-gallery.css";
+
 import "./styles/style.scss";
 
 //importing pages
-const Homepage = lazy(() =>  import("./pages/Homepage"));
+const Homepage = lazy(() => import("./pages/Homepage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const RegisterPage = lazy(() => import("./pages/Register"));
@@ -17,6 +21,7 @@ const Search = lazy(() => import("./pages/search"));
 //importing components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Product from "./pages/product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -35,11 +40,11 @@ root.render(
           <Route path="/create-listing" element={<CreateListing />} />
           <Route path="/listings" element={<YourListing />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/product/:query" element={<Search />} />
+          <Route path="/search/:query" element={<Search />} />
+          <Route path="/product/:product_id" element={<Product />} />
         </Routes>
       </Suspense>
       <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
-
