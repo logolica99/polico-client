@@ -7,11 +7,14 @@ import add from "../assets/icons/add.svg";
 import logout from "../assets/icons/logout.svg";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
+  const [query, setQuery] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const [loggedIn, setLoggedIn] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(false);
+  let navigate = useNavigate();
 
   return (
     <div className="nav">
@@ -22,8 +25,25 @@ export default function Nav() {
           </Link>
         </div>
         <div className="nav-wrapper-search">
-          <input type="text" placeholder="Search..." />
-          <div className="nav-wrapper-search-button">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                navigate("/search/" + query);
+                setQuery("");
+              }
+            }}
+          />
+          <div
+            className="nav-wrapper-search-button"
+            onClick={() => {
+              navigate("/search/" + query);
+              setQuery("");
+            }}
+          >
             <img src={search} alt="" />
           </div>
         </div>

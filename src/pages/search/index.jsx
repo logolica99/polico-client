@@ -11,6 +11,7 @@ import {
   Slide,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
@@ -129,6 +130,7 @@ export default function Search() {
                 onChange={handlePriceRangeChange}
                 valueLabelDisplay="auto"
                 disableSwap
+                sx={{ color: "#34a5c9" }}
               />
             </div>
             <div className="search-filter-price-range">
@@ -164,6 +166,7 @@ export default function Search() {
               onChange={handlePriceRangeChange}
               valueLabelDisplay="auto"
               disableSwap
+              sx={{ color: "#34a5c9" }}
             />
           </div>
           <div className="search-filter-price-range">
@@ -238,14 +241,19 @@ export default function Search() {
         </div>
         <div className="search-content-cards">
           {productData.map((data) => (
-            <ListingCard
+            <Link
               key={data.id}
-              imgSrc={data.imgSrc}
-              title={data.title}
-              university={data.university}
-              division={data.division}
-              price={data.price}
-            />
+              to={"/product/" + data.id}
+              style={{ textDecoration: "none" }}
+            >
+              <ListingCard
+                imgSrc={data.imgSrc}
+                title={data.title}
+                university={data.university}
+                division={data.division}
+                price={data.price}
+              />
+            </Link>
           ))}
         </div>
         <div className="search-content-pagination">
